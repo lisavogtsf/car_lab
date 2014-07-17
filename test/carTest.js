@@ -73,16 +73,32 @@ describe("frederick the car/prototype", function(){
     });
   });
 
-  describe("#pick_up", function(){
+  describe("#pickUp", function(){
     it("should update the passengers array to include a new name", function(){
       frederick.state = "on";
       frederick.passengers = ["me", "you", "everyone"];
-      frederick.pick_up("Mom");
+      frederick.pickUp("Mom");
       var newPass = frederick.passengers[frederick.passengers.length - 1];
-      console.log(frederick.passengers);
       expect(newPass).to.equal("Mom");
     });
   });
+
+  // describe("#dropOff", function(){
+  //   it("should take the named person off the array, if the car is started", function(){
+  //     frederick.passengers = ["me", "you", "everyone", "Mom"];
+  //     frederick.dropOff("Mom");
+  //     console.log(frederick.passengers);
+  //     var absent = frederick.passengers.indexOf("Mom");
+  //     expect(absent === -1).to.equal; 
+
+
+    //   // var present = frederick.passengers.indexOf("Mom");
+    //   // expect(present != -1).to.equal(true);
+
+
+     
+// })
+
 });
 
 

@@ -37,6 +37,9 @@ Car.prototype.driveTo = function(destination){
   //need to start car, test
   if(this.state === "on"){  
     console.log("driving to " + destination);
+  } else {
+    console.log("Turn the car on!");
+    return -1;
   }
   // for testing
   // return destination; 
@@ -46,17 +49,37 @@ Car.prototype.driveTo = function(destination){
 Car.prototype.park = function(){
   if(this.state === "off"){
     console.log("parked!!");
+  } else {
+    console.log("Turn the car off, first!");
+    return -1;
   }
 };
 
 // Car#pick_up should take a name and console.log that you are "driving to 'pick up <friend>'", but only if the car is on. It should also update the passengers array to include the new passanger.
-Car.prototype.pick_up = function(name){
+Car.prototype.pickUp = function(name){
   if(this.state === "on"){
     this.passengers.push(name);
+  } else {
+    console.log("Turn the car on!");
+    return -1;    
   }
-}
+};
+
+// Car#dropOff it should take a name and remove them from the passangers array, but only if they are in the array. It should also only drop them off if the car is on.
+// Car.prototype.dropOff = function(name){
+//   var present = this.passengers.indexOf(name);
+//   if((this.state === "on") && (present !== -1)) { 
+//     var notDroppingOff = function (index){
+//       if()
+//     }
+//     this.passengers.filter(notDroppingOff(present));
 
 
+//   } else {
+//     console.log("Turn the car on first!");
+//     return -1;
+//   }
+// };
 
 
 var frederick = new Car("vw", "bug", 1965, "green");
