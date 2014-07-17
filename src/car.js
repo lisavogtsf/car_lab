@@ -8,6 +8,7 @@ function Car(make, model, year, color){
   this.state = "off";
   this.previousOwners = [];
   this.currentOwner = "manufacturer";
+  this.passengers = [];
 }
 
 // Car#sale, we should be able to sale a car to someone, which should update the current_owner and previous_owners array.
@@ -47,6 +48,14 @@ Car.prototype.park = function(){
     console.log("parked!!");
   }
 };
+
+// Car#pick_up should take a name and console.log that you are "driving to 'pick up <friend>'", but only if the car is on. It should also update the passengers array to include the new passanger.
+Car.prototype.pick_up = function(name){
+  if(this.state === "on"){
+    this.passengers.push(name);
+  }
+}
+
 
 
 

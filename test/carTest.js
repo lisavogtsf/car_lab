@@ -68,7 +68,19 @@ describe("frederick the car/prototype", function(){
   describe("#park", function(){
     it("should be off first to park", function(){
       frederick.off();
+      frederick.park();
       expect(frederick.state).to.equal("off");
+    });
+  });
+
+  describe("#pick_up", function(){
+    it("should update the passengers array to include a new name", function(){
+      frederick.state = "on";
+      frederick.passengers = ["me", "you", "everyone"];
+      frederick.pick_up("Mom");
+      var newPass = frederick.passengers[frederick.passengers.length - 1];
+      console.log(frederick.passengers);
+      expect(newPass).to.equal("Mom");
     });
   });
 });
