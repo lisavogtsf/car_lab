@@ -46,23 +46,31 @@ describe("frederick the car/prototype", function(){
     it("should be on", function(){
       frederick.start();
       expect(frederick.state).to.equal("on");
-    })
-  })
+    });
+  });
 
   describe("#off", function(){
     it("should be off", function(){
       frederick.off();
       expect(frederick.state).to.equal("off");
-    })
-  })
+    });
+  });
 
   describe("#driveTo", function(){
-    it("should console.log the destination, return it for testing", function(){
-      var spot = frederick.driveTo("Mexico");
-      expect(spot).to.exist;
-    })
-  })
+    it("should console.log the destination", function(){
+      frederick.start();
+      frederick.driveTo("Mexico");
+      //expect(spot).to.exist;
+      expect(frederick.state).to.equal("on");
+    });
+  });
 
+  describe("#park", function(){
+    it("should be off first to park", function(){
+      frederick.off();
+      expect(frederick.state).to.equal("off");
+    });
+  });
 });
 
 

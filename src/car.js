@@ -37,14 +37,16 @@ Car.prototype.driveTo = function(destination){
   if(this.state === "on"){  
     console.log("driving to " + destination);
   }
-  // return destination;
-
+  // for testing
+  // return destination; 
 };
 
 // // Car#park only if the car is off and if it's off console.log parked!!
-// Car.prototype.park = function(){
-
-// };
+Car.prototype.park = function(){
+  if(this.state === "off"){
+    console.log("parked!!");
+  }
+};
 
 
 
