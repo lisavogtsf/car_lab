@@ -83,34 +83,21 @@ describe("frederick the car/prototype", function(){
     });
   });
 
-  // describe("#dropOff", function(){
-  //   it("should take the named person off the array, if the car is started", function(){
-  //     frederick.passengers = ["me", "you", "everyone", "Mom"];
-  //     frederick.dropOff("Mom");
-  //     console.log(frederick.passengers);
-  //     var absent = frederick.passengers.indexOf("Mom");
-  //     expect(absent === -1).to.equal; 
+  describe("#dropOff", function(){
+    it("should take the named person off the array, if the car is started", function(){
+      frederick.passengers = ["me", "you", "everyone", "Mom"];
+      frederick.dropOff("you");
+      console.log(frederick.passengers);
+      var absent = frederick.passengers.indexOf("you");
+      expect(absent === -1).to.equal(true); 
 
 
     //   // var present = frederick.passengers.indexOf("Mom");
     //   // expect(present != -1).to.equal(true);
-
-
-     
-// })
+  
+    });
+  });
 
 });
-
-
-
-
-
-
-
-
-
-
-
-
 
 

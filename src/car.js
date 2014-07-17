@@ -66,20 +66,16 @@ Car.prototype.pickUp = function(name){
 };
 
 // Car#dropOff it should take a name and remove them from the passangers array, but only if they are in the array. It should also only drop them off if the car is on.
-// Car.prototype.dropOff = function(name){
-//   var present = this.passengers.indexOf(name);
-//   if((this.state === "on") && (present !== -1)) { 
-//     var notDroppingOff = function (index){
-//       if()
-//     }
-//     this.passengers.filter(notDroppingOff(present));
+Car.prototype.dropOff = function(name){
+  var present = this.passengers.indexOf(name);
+  if((this.state === "on") && (present !== -1)) { 
+    var removed = this.passengers.splice(present, 1);
 
-
-//   } else {
-//     console.log("Turn the car on first!");
-//     return -1;
-//   }
-// };
+  } else {
+    console.log("Turn the car on first and check your passengers' names!");
+    return -1;
+  }
+};
 
 
 var frederick = new Car("vw", "bug", 1965, "green");
