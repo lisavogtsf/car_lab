@@ -83,7 +83,7 @@ var frederick = new Car("vw", "bug", 1965, "green");
 var kitt = new Car("hotrod", "awesome", 1985, "black");
 
 
-module.exports = frederick;
+module.exports = kitt;
 
 
 // eval(locus);
